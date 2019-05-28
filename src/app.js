@@ -3,6 +3,8 @@ const path = require('path')
 const hbs = require('hbs')
 
 const app = express()
+const port = process.env.PORT || 8080
+
 //Define paths for Express config
 const pubDirPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -59,6 +61,6 @@ app.get('*',(req, res) => {
     res.send('My 404 page')
 })
 
-app.listen(8080, () =>{
-    console.log('Server is up on port 8080')
+app.listen(port, () =>{
+    console.log('Server is up on port ' + port)
 })
